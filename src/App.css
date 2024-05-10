@@ -1,20 +1,33 @@
 #root {
+  background-color: #1B1D1F;
   width: 100vw;
+  min-height: 100vh;
+  z-index: -100000;
 }
 
 .main {
-  background-color: #111315;
-  height: 100vh;
-  width: 100vw;
+  min-height: 100vh;
+  width: 100%;
   max-width: 1280px;
+  background-color: #111315;
   margin: 0 auto;
+  display: flex;
+  justify-content: center;
+  position: relative;
 }
 
-.background-photo {
-  height: 30%;
-  min-height: 300px;
+.background-img {
+  height: 300px;
   width: 100%;
-  background-image: url(/public/bg-cafe.jpg);
-  background-position: center;
-  background-size: cover;
+  object-fit: cover;
+}
+
+.menu {
+  position: absolute;
+  top: 50%;
+  left: 50%;
+  transform: translate(-50%, -50%);
+  background-color: #1B1D1F;
+  padding: 80px; 
+  border-radius: 10px;
 }
