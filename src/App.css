@@ -13,23 +13,25 @@
   margin: 0 auto;
   display: flex;
   justify-content: center;
+  flex-direction: column;
   position: relative;
+  z-index: 0;
 }
 
 .background-img {
   height: 300px;
   width: 100%;
   object-fit: cover;
+  position: absolute;
+  z-index: -1;
 }
 
 .menu {
-  position: absolute;
-  top: 50%;
-  left: 50%;
-  transform: translate(-50%, -50%);
+  margin: 80px 120px;
   background-color: #1B1D1F;
   padding: 0px 80px; 
   border-radius: 10px;
+  
 }
 
 .menu-header {
@@ -38,8 +40,11 @@
   background-position:right;
   background-position: top right;
   padding-top: 80px;
+  margin: 0 auto;
   margin-top: 30px;
   text-align: center;
+  width: 60%;
+  min-width: 300px;
 }
 
 .header-text {
