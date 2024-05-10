@@ -28,14 +28,14 @@ const CoffeeMenu = () => {
           and shipped fresh weekly.
         </p>
         <div className="btn-container">
-          <button>All Products</button>
-          <button>Available Now</button>
+          <button className="btn active">All Products</button>
+          <button className="btn">Available Now</button>
         </div>
       </section>
       <section className="coffee-list">
         {!coffeeList && <h1>Loading coffee...</h1>}
         {coffeeList && coffeeList.map(coffee => (
-          <CoffeeCard key={coffee.name} coffee={coffee}/>
+          <CoffeeCard key={coffee.id} coffee={coffee}/>
         ))}
       </section>
     </div>
