@@ -28,6 +28,30 @@
   left: 50%;
   transform: translate(-50%, -50%);
   background-color: #1B1D1F;
-  padding: 80px; 
+  padding: 0px 80px; 
   border-radius: 10px;
+}
+
+.menu-header {
+  background-image: url(/vector.svg);
+  background-repeat: no-repeat;
+  background-position:right;
+  background-position: top right;
+  padding-top: 80px;
+  margin-top: 30px;
+  text-align: center;
+}
+
+.header-text {
+  margin: 0;
+  font-size: 2.5em;
+}
+
+.text {
+  color: #6F757C;
+  font-weight: 500;
+}
+
+.btn-container button {
+  margin: 0px 5px;
 }
