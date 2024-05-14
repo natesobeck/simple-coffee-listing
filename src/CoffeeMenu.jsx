@@ -4,19 +4,35 @@ import { useEffect, useState } from "react"
 // components
 import CoffeeCard from "./CoffeeCard"
 
-const CoffeeMenu = () => {
+// helper functions
+import { handleActiveSelection } from "./helpers"
 
+const CoffeeMenu = () => {
   const [coffeeList, setCoffeeList] = useState(null)
+  const [displayedCoffeeList, setDisplayedCoffeeList] = useState(null)
+
+  const handleFilterSoldOut = (e) => {
+    const filteredList = coffeeList.filter(coffee => coffee.available)
+    setDisplayedCoffeeList(filteredList)
+    handleActiveSelection(e)
+  }
+
+  const handleShowAllCoffee = (e) => {
+    if (displayedCoffeeList !== coffeeList) {
+      setDisplayedCoffeeList(coffeeList)
+      handleActiveSelection(e)
+    }
+  }
 
   useEffect(() => {
     async function fetchCoffeeData() {
       const response = await fetch('https://raw.githubusercontent.com/devchallenges-io/web-project-ideas/main/front-end-projects/data/simple-coffee-listing-data.json')
       const coffeeData = await response.json()
       setCoffeeList(coffeeData)
+      setDisplayedCoffeeList(coffeeData)
     }
     fetchCoffeeData()
   }, [])
-
 
   return (
     <div>
@@ -28,13 +44,13 @@ const CoffeeMenu = () => {
           and shipped fresh weekly.
         </p>
         <div className="btn-container">
-          <button className="btn active">All Products</button>
-          <button className="btn">Available Now</button>
+          <button className="btn active all-coffee" onClick={handleShowAllCoffee}>All Products</button>
+          <button className="btn filtered-coffee" onClick={handleFilterSoldOut}>Available Now</button>
         </div>
       </section>
       <section className="coffee-list">
         {!coffeeList && <h1>Loading coffee...</h1>}
-        {coffeeList && coffeeList.map(coffee => (
+        {displayedCoffeeList && displayedCoffeeList.map(coffee => (
           <CoffeeCard key={coffee.id} coffee={coffee}/>
         ))}
       </section>

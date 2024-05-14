@@ -23,6 +23,7 @@
   width: 100%;
   object-fit: cover;
   position: absolute;
+  top: 0;
   z-index: -1;
 }
 
@@ -89,15 +90,15 @@
   top: 20px;
   left: 20px;
   color: #111315;
-  padding: 5px 10px;
+  padding: 3px 10px;
   font-size: .6em;
   background-color: #F6C768;
   border-radius: 15px;
-  font-weight: bold;
+  font-weight: 600;
 }
 
 .coffee-img {
-  border-radius: 10px;
+  border-radius: 15px;
 }
 
 .name-price-container {
@@ -139,5 +140,12 @@
 
 .btn:hover {
   cursor: pointer;
-  background-color: red;
+  color: #F6C768;
+}
+
+.available {
+  color: #ED735D;
+  font-weight: 600;
+  font-size: .9em;
+  margin-left: auto;
 }

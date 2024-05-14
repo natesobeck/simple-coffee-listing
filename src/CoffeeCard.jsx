@@ -13,6 +13,7 @@ const CoffeeCard = ({ coffee }) => {
         <img src={coffee.rating ? "/Star_fill.svg" : "/Star.svg"} alt="" />
         <span className="coffee-rating">{coffee.rating ? coffee.rating : ""}</span>
         <span className="coffee-votes">{coffee.rating ? `(${coffee.votes} votes)` : "No Ratings"}</span>
+        <span className="available">{coffee.available ? '' : 'Sold out'}</span>
       </div>
     </div>
   )
